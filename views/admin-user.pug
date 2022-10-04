@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  style(type="text/css").
+    .users-table {
+      width: 100%;
+    }
+    .users-table td {
+      border: 1px solid #ccc;
+      color: #444;
+      padding: 8px;
+    }
+    .users-table td.fix-width-400 {
+      width: 500px;
+    }
+
+    .users-table td.center {
+      text-align: center;
+    }
+
+    .break-word {
+      min-width: 300px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+  h1 Admin - Online User List
+  table(class='users-table')
+    tr
+      th userName
+      th token
+      th info
+      th action
+
+    each user, index in users
+      tr 
+        td #{user.userName}
+        td(class="fix-width-400")
+          span(class="break-word") #{user.token}
+        td #{user.info}
+        td(class="center")
+          form(method="post" action="/admin-user/delete")
+            input(type="hidden", name="userName", value=user.userName)
+            button Del
+  form(method="post" action="/admin-user/add")
+    button(style="display:none") Add User Test
+  //- button(onclick="addUser()") Add User Test
+
+  script.
+    function addUser() {
+      console.log("add user")
+    }
+

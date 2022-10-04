@@ -1,0 +1,22 @@
+<html>
+  <div>
+    Oster testing...
+  </div>
+
+  <script>
+    async function fetchAccessToken() {
+      const response = await fetch('/api/auth/accessToken', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({})
+      });
+      return response.json()
+    }
+
+    fetchAccessToken().then(jsonBody => {
+      console.log('response body: ', jsonBody)
+    })
+  </script>
+</html>
