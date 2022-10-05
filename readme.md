@@ -15,7 +15,7 @@
 ### 驗證是否啟動
 #### 簡易方式：
 打開browser```http://localhost:3000 ```可以看見如下圖
-![mock started](./docs/mock-start-jndex.png)
+![mock started](./docs/mock-start-index.png)
 
 mac 執行
 ```
