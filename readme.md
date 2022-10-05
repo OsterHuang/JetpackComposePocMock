@@ -25,3 +25,5 @@ curl --location --request POST 'localhost:3000/api/auth/accessToken' \
 ```
 
 ## 新增mock api
+建議使用 vscode 可以方便編輯新增api
+https://visualstudio.microsoft.com/zh-hant/downloads/
